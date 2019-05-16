@@ -30,7 +30,7 @@ function get-instance-dbnames([string]$instanceName)
             # Select all the system database names within this instance  
             $SqlCmd.CommandText = "SELECT name
 					FROM master.sys.databases
-					WHERE name IN('master', 'model', 'msdb', 'distribution' , 'ReportServer', 'ReportServerTempDB')"
+					WHERE name IN('master', 'model', 'msdb')"
             $SqlCmd.Connection = $Connection
             $SqlAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
             $SqlAdapter.SelectCommand = $SqlCmd

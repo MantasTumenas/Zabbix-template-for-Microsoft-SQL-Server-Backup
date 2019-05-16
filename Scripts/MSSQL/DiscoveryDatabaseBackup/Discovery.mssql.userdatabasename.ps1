@@ -30,7 +30,7 @@ function get-instance-dbnames([string]$instanceName)
             # Select all the user database names within this instance  
             $SqlCmd.CommandText = "SELECT name
 					FROM master.sys.databases
-					WHERE name NOT IN('master', 'model', 'msdb','distribution' , 'ReportServer', 'ReportServerTempDB', 'tempdb')"
+					WHERE name NOT IN('master', 'model', 'msdb', 'tempdb')"
             $SqlCmd.Connection = $Connection
             $SqlAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
             $SqlAdapter.SelectCommand = $SqlCmd

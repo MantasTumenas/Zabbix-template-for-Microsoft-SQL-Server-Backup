@@ -60,7 +60,7 @@ if ($InstName -and $DBName)
 													FROM msdb.dbo.backupset
 													WHERE database_name = '$DBName'
 													AND type = 'I'
-													AND database_name NOT IN ('master', 'model', 'msdb', 'tempdb', 'distribution' , 'ReportServer', 'ReportServerTempDB')))
+													AND database_name NOT IN ('master', 'model', 'msdb', 'tempdb')))
 									AS state"
             $SqlCmd.Connection = $Connection
             $SqlAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
